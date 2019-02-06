@@ -20,9 +20,18 @@ export class DropdownComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.dataItems.map((item) => {
+      item.active = false;
+    })
   }
 
   private onSelect(item): void {
+    item.active = true;
+    this.dataItems.map((dataItem) => {
+      if(dataItem.id != item.id) {
+        dataItem.active = false;
+      }
+    })
     this.selectedItem = item;
     this.onChange.emit(item);
     this.label = item.label;

@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DropdownPageComponent implements OnInit {
   data: Array<any> = [];
-  label: string = 'News';
+  label: string = 'Select News Article';
   isDisabled: boolean = false;
   
   constructor() { }

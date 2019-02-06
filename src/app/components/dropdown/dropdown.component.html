@@ -1,9 +1,16 @@
-<div class="a-dropdown" *ngIf="dataItems.length > 0">
+<div class="a-dropdown" [ngClass]="{'a-show': dropDownVisible}" *ngIf="dataItems.length > 0">
+        <!-- [ngClass]="{'first': true, 'second': true, 'third': false}" -->
   <div class="a-dropdown-toggle" (click)="toggleDropdown()">
       <div class="a-choosen-text">{{ label }}</div>
-      <i class="a-icon appkiticon" [ngClass]="this.dropDownVisible ? 'icon-up-chevron-fill' : 'icon-down-chevron-fill' "></i>
+      <i class="a-icon appkiticon" [ngClass]="{'icon-up-chevron-fill': dropDownVisible, 'icon-down-chevron-fill': !dropDownVisible }"></i>
   </div>
-  <div class="a-dropdown-menu" *ngIf="this.dropDownVisible">
-      <div class="a-dropdown-item" *ngFor="let item of dataItems" (click)="onSelect(item)">{{ item.label }}</div>
+  <div class="a-dropdown-menu" *ngIf="dropDownVisible">
+    <div 
+        class="a-dropdown-item"
+        [ngClass]="{ 'active': item.active}" 
+        *ngFor="let item of dataItems" 
+        (click)="onSelect(item)"
+    >{{ item.label }}
+    </div>
   </div>
 </div>
