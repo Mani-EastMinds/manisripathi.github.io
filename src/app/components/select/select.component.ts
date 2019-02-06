@@ -22,13 +22,14 @@ export class SelectComponent implements OnInit {
   ngOnInit() {
   }
 
-  onSelect(item): void {
+  private onSelect(item): void {
     this.selectedItem = item;
     console.log('from select component', item);
     this.onChange.emit(item);
+    this.toggleDropdown();
   }
 
-  toggleDropdown() {
+  private toggleDropdown(): void {
     this.dropDownVisible = !this.dropDownVisible;
   }
 }
