@@ -24,8 +24,8 @@ export class SelectComponent implements OnInit {
 
   private onSelect(item): void {
     this.selectedItem = item;
-    console.log('from select component', item);
     this.onChange.emit(item);
+    this.label = item.label;
     this.toggleDropdown();
   }
 
