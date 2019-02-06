@@ -2,11 +2,11 @@
   select works!
 </p>
 
-<div>
-  <label for="">{{ label }}</label>
+<div *ngIf="dataItems.length > 0">
+  <label>{{ label }}</label>
   <ul>
-    <li *ngFor="let option of options as dataItems">
-      {{ option.label }}
+    <li *ngFor="let item of dataItems">
+      {{ item.label }}
     </li>
   </ul>
 </div>
