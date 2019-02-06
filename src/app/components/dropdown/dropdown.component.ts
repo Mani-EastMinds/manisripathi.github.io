@@ -1,11 +1,11 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'app-select',
-  templateUrl: './select.component.html',
-  styleUrls: ['./select.component.css']
+  selector: 'app-dropdown',
+  templateUrl: './dropdown.component.html',
+  styleUrls: ['./dropdown.component.css']
 })
-export class SelectComponent implements OnInit {
+export class DropdownComponent implements OnInit {
 
   @Input() dataItems: Array<any> = [];
   @Input() label: string;

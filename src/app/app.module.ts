@@ -3,14 +3,14 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SelectComponent } from './components/select/select.component';
-import { SelectPageComponent } from './components/select-page/select-page.component';
+import { DropdownComponent } from './components/dropdown/dropdown.component';
+import { DropdownPageComponent } from './components/dropdown-page/dropdown-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SelectComponent,
-    SelectPageComponent
+    DropdownComponent,
+    DropdownPageComponent
   ],
   imports: [
     BrowserModule,

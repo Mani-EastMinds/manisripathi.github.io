@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { SelectPageComponent } from './components/select-page/select-page.component';
+import { DropdownPageComponent } from './components/dropdown-page/dropdown-page.component';
 
 const routes: Routes = [
   {
-    'path': '', redirectTo: 'select-page', pathMatch: 'full'
+    'path': '', redirectTo: 'dropdown-page', pathMatch: 'full'
   },
   {
-    'path': 'select-page', component: SelectPageComponent
+    'path': 'dropdown-page', component: DropdownPageComponent
   }
 ];
 

@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-select-page',
-  templateUrl: './select-page.component.html',
-  styleUrls: ['./select-page.component.css']
+  selector: 'app-dropdown-page',
+  templateUrl: './dropdown-page.component.html',
+  styleUrls: ['./dropdown-page.component.css']
 })
-export class SelectPageComponent implements OnInit {
+export class DropdownPageComponent implements OnInit {
   data: Array<any> = [];
   label: string = 'News';
   isDisabled: boolean = false;
