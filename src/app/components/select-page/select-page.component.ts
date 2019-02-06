@@ -37,4 +37,8 @@ export class SelectPageComponent implements OnInit {
     ];
   }
 
+  onSelection($event) {
+    console.log('From the select page compoent', $event);
+  }
+
 }

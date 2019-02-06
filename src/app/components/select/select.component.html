@@ -4,6 +4,6 @@
       <i class="a-icon appkiticon icon-down-chevron-fill"></i>
   </div>
   <div class="a-dropdown-menu" *ngIf="this.dropDownVisible">
-      <div class="a-dropdown-item" *ngFor="let item of dataItems">{{ item.label }}</div>
+      <div class="a-dropdown-item" *ngFor="let item of dataItems" (click)="onSelect(item)">{{ item.label }}</div>
   </div>
 </div>
