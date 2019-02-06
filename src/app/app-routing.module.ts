@@ -4,12 +4,15 @@ import { SelectComponent } from './components/select/select.component';
 
 const routes: Routes = [
   {
-  'path': '', component: SelectComponent, pathMatch: 'full'
+    'path': '', redirectTo: 'select', pathMatch: 'full'
+  },
+  {
+    'path': 'select', component: SelectComponent
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { useHash: true })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

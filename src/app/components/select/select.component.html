@@ -1,3 +1,12 @@
 <p>
   select works!
 </p>
+
+<div>
+  <label for="">{{ label }}</label>
+  <ul>
+    <li *ngFor="let option of options as dataItems">
+      {{ option.label }}
+    </li>
+  </ul>
+</div>
