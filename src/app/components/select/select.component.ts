@@ -13,6 +13,7 @@ export class SelectComponent implements OnInit {
   @Output() onChange: EventEmitter<any>;
 
   selectedItem: any;
+  dropDownVisible: boolean = false;
 
   constructor() {
     this.onChange = new EventEmitter();
@@ -24,5 +25,9 @@ export class SelectComponent implements OnInit {
   onSelect(item): void {
     this.selectedItem = item;
     this.onChange.emit(item);
+  }
+
+  toggleDropdown() {
+    this.dropDownVisible = !this.dropDownVisible;
   }
 }

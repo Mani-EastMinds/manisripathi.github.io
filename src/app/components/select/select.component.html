@@ -1,9 +1,9 @@
 <div class="a-dropdown" *ngIf="dataItems.length > 0">
-  <div class="a-dropdown-toggle">
+  <div class="a-dropdown-toggle" (click)="toggleDropdown()">
       <div class="a-choosen-text">{{ label }}</div>
       <i class="a-icon appkiticon icon-down-chevron-fill"></i>
   </div>
-  <div class="a-dropdown-menu">
+  <div class="a-dropdown-menu" *ngIf="this.dropDownVisible">
       <div class="a-dropdown-item" *ngFor="let item of dataItems">{{ item.label }}</div>
   </div>
 </div>
