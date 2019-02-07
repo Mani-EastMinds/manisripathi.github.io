@@ -34,7 +34,6 @@ export class DropdownComponent implements OnInit {
     })
     this.selectedItem = item;
     this.onChange.emit(item);
-    this.label = item.label;
     this.toggleDropdown();
   }
 
