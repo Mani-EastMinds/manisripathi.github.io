@@ -10,11 +10,11 @@
   <div class="a-panel a-margin-tp-50 a-p-20 button-section-wrapper code-wrapper">
       <div class="d-flex a-bg-gray">
           <div class="p-3 w-100">
-              <select class="a-selector1 a-select">
+              <select class="a-selector1 a-select form-control">
                 <option
                   value="option.id"
                   *ngFor="let option of data">
-                {{ option["displayLabel"] || option }}
+                  {{ option["displayLabel"] || option }}
                 </option>
               </select>
           </div>
