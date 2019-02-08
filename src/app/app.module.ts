@@ -8,6 +8,7 @@ import { DropdownComponent } from './components/dropdown/dropdown.component';
 import { DropdownPageComponent } from './components/dropdown-page/dropdown-page.component';
 import { SelectComponent } from './components/select/select.component';
 import { SelectPageComponent } from './components/select-page/select-page.component';
+import { FilterPipe } from './components/dropdown/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { SelectPageComponent } from './components/select-page/select-page.compon
     DropdownComponent,
     DropdownPageComponent,
     SelectComponent,
-    SelectPageComponent
+    SelectPageComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,

@@ -15,7 +15,7 @@
     <div 
         class="a-dropdown-item"
         [ngClass]="{ 'active': item.active}" 
-        *ngFor="let item of dataItems" 
+        *ngFor="let item of dataItems | filter: inputSearch" 
         (click)="onSelect(item)"
         (keyup)="onKeyup(item)"
     >{{ item.label }}
