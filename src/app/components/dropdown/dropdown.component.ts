@@ -8,12 +8,14 @@ import { Component, OnInit, Input, Output, EventEmitter, HostListener, ElementRe
 export class DropdownComponent implements OnInit {
 
   @Input() dataItems: Array<any> = [];
-  @Input() label: string;
+  @Input() placeholder: string;
   @Input() isDisables: boolean = false;
   @Output() onChange: EventEmitter<any>;
 
   selectedItem: any;
   dropDownVisible: boolean = false;
+  inputSearch: string;
+  
 
   @HostListener('document:click', ['$event'])
   clickout(event) {
@@ -43,7 +45,7 @@ export class DropdownComponent implements OnInit {
         dataItem.active = false;
       }
     })
-    this.label = item.label;
+    this.inputSearch = item.label;
     this.selectedItem = item;
     this.onChange.emit(item);
     this.toggleDropdown();

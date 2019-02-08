@@ -12,7 +12,7 @@ export class SelectComponent implements OnInit {
   @Input() placeholder: string;
   @Input() isActive: boolean = false;
   @Input() isDisabled: boolean = false;
-  @Input() searchable: boolean = false;
+  @Input() searchable: boolean;
   @Input() isDataProvided: boolean;
   @Input() data: Array<any> = [];
   @Input() url: string;

@@ -1,8 +1,14 @@
 <div class="a-dropdown" [ngClass]="{'a-show': dropDownVisible}" *ngIf="dataItems.length > 0">
-        <!-- [ngClass]="{'first': true, 'second': true, 'third': false}" -->
-  <div class="a-dropdown-toggle" (click)="toggleDropdown()">
-      <div class="a-choosen-text">{{ label }}</div>
-      <i class="a-icon appkiticon" [ngClass]="{'icon-up-chevron-fill': dropDownVisible, 'icon-down-chevron-fill': !dropDownVisible }"></i>
+  <div class="a-dropdown-toggle" (click)="toggleDropdown()" (keydown)="onKeyup(item)">
+      <input 
+        type="text" 
+        class="a-choosen-text" 
+        [readonly]="!searchable"
+        [(ngModel)]="inputSearch"
+        [placeholder]="placeholder"> 
+      <i 
+        class="a-icon appkiticon" 
+        [ngClass]="{'icon-up-chevron-fill': dropDownVisible, 'icon-down-chevron-fill': !dropDownVisible }"></i>
   </div>
   <div class="a-dropdown-menu" *ngIf="dropDownVisible">
     <div 
