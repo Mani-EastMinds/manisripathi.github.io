@@ -1,3 +1,11 @@
 .a-dropdown-menu {
     display: block !important;
 }
+
+input {
+    width: 100% !important;
+}
+
+.input-pointer {
+    cursor: pointer;
+}

@@ -2,7 +2,8 @@
   <div class="a-dropdown-toggle" (click)="toggleDropdown()" (keydown)="onKeyup(item)">
       <input 
         type="text" 
-        class="a-choosen-text" 
+        class="a-choosen-text"
+        [ngClass]="{ 'input-pointer': !searchable }"
         [readonly]="!searchable"
         [(ngModel)]="inputSearch"
         [placeholder]="placeholder"> 

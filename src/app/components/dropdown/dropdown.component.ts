@@ -9,6 +9,7 @@ export class DropdownComponent implements OnInit {
 
   @Input() dataItems: Array<any> = [];
   @Input() placeholder: string;
+  @Input() searchable: boolean;
   @Input() isDisables: boolean = false;
   @Output() onChange: EventEmitter<any>;
 

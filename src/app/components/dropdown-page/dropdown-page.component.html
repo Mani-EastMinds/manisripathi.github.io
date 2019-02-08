@@ -7,9 +7,8 @@
                 <div class="a-bg-gray p-3">
                     <app-dropdown
                         [dataItems]="data"
-                        [label]="label"
-                        [searchable]="searchable"
-                        [placeholder]="placeholder"
+                        [searchable]="searchable_1"
+                        [placeholder]="placeholder_1"
                         (onChange)="onSelection($event)"
                     >
                     </app-dropdown>
@@ -20,4 +19,24 @@
   </div>
 </div>
 
+<div class="page-host-new">
+    <div class="content-box">
+      <section class="toggle-section page-section">
+          <div class="a-panel a-margin-tp-50 a-p-20 button-section-wrapper code-wrapper">
+              <div class="sample-code-wrapper">
+                  <div class="a-bg-gray p-3">
+                      <app-dropdown
+                          [dataItems]="data"
+                          [searchable]="searchable_2"
+                          [placeholder]="placeholder_2"
+                          (onChange)="onSelection($event)"
+                      >
+                      </app-dropdown>
+                  </div>
+              </div>
+          </div>
+      </section>
+    </div>
+  </div>
+  
 
