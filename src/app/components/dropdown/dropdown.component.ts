@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, HostListener, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-dropdown',
@@ -15,7 +15,18 @@ export class DropdownComponent implements OnInit {
   selectedItem: any;
   dropDownVisible: boolean = false;
 
-  constructor() {
+  @HostListener('document:click', ['$event'])
+  clickout(event) {
+    if(this.eRef.nativeElement.contains(event.target) && this.dropDownVisible) {
+      return;
+    } else if(this.dropDownVisible) {
+        this.dropDownVisible = false;        
+    }
+  }
+  
+  constructor(
+    private eRef: ElementRef
+  ) {
     this.onChange = new EventEmitter();
   }
 
@@ -32,6 +43,7 @@ export class DropdownComponent implements OnInit {
         dataItem.active = false;
       }
     })
+    this.label = item.label;
     this.selectedItem = item;
     this.onChange.emit(item);
     this.toggleDropdown();
@@ -39,5 +51,9 @@ export class DropdownComponent implements OnInit {
 
   private toggleDropdown(): void {
     this.dropDownVisible = !this.dropDownVisible;
+  }
+
+  private onKeyup(item): void {
+    console.log(item);
   }
 }

@@ -10,6 +10,7 @@
         [ngClass]="{ 'active': item.active}" 
         *ngFor="let item of dataItems" 
         (click)="onSelect(item)"
+        (keyup)="onKeyup(item)"
     >{{ item.label }}
     </div>
   </div>
