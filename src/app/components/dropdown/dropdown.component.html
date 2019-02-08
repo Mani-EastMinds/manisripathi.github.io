@@ -1,5 +1,5 @@
-<div class="a-dropdown" [ngClass]="{'a-show': dropDownVisible}" *ngIf="dataItems.length > 0">
-  <div class="a-dropdown-toggle" (click)="toggleDropdown()" (keydown)="onKeyup(item)">
+<div class="a-dropdown" [ngClass]="{'a-show': dropDownVisible}" *ngIf="dataItems.length > 0" (keydown)="onKeydown($event)">
+  <div class="a-dropdown-toggle" (click)="toggleDropdown()" >
       <input 
         type="text" 
         class="a-choosen-text"
@@ -14,10 +14,10 @@
   <div class="a-dropdown-menu" *ngIf="dropDownVisible">
     <div 
         class="a-dropdown-item"
-        [ngClass]="{ 'active': item.active}" 
-        *ngFor="let item of dataItems | filter: inputSearch" 
+        [ngClass]="{ 'active': item.active}"
+        [class.active]="i == arrowkeyLocation"
+        *ngFor="let item of dataItems | filter: inputSearch; let i = index" 
         (click)="onSelect(item)"
-        (keyup)="onKeyup(item)"
     >{{ item.label }}
     </div>
   </div>

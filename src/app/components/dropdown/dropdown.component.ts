@@ -16,6 +16,7 @@ export class DropdownComponent implements OnInit {
   selectedItem: any;
   dropDownVisible: boolean = false;
   inputSearch: string;
+  arrowkeyLocation: any = 0;
   
 
   @HostListener('document:click', ['$event'])
@@ -56,7 +57,38 @@ export class DropdownComponent implements OnInit {
     this.dropDownVisible = !this.dropDownVisible;
   }
 
-  private onKeyup(item): void {
-    console.log(item);
+  private onKeydown(event: any) {
+    const keyCode = event.keyCode;
+    switch (keyCode) {
+      // Enter Key
+      case 13:
+        this.dropDownVisible = false;
+        event.preventDefault();
+        break;
+      // Escape Key
+      case 27:
+        this.dropDownVisible = false;
+        event.preventDefault();
+        break;
+      // Up Arrow      
+      case 38:
+        this.arrowkeyLocation--;
+        event.preventDefault();
+        break;
+      // Down Arrow      
+      case 40:
+        this.arrowkeyLocation++;
+        event.preventDefault();
+        break;
+      // Delete Key      
+      case 46:
+        this.inputSearch = "";
+        this.dropDownVisible = true;
+        event.preventDefault();
+        break;
+
+      default:
+        break;
+    }
   }
 }
