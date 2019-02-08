@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SelectPageComponent } from './dropdown-page.component';
+import { DropdownPageComponent } from './dropdown-page.component';
 
-describe('SelectPageComponent', () => {
-  let component: SelectPageComponent;
-  let fixture: ComponentFixture<SelectPageComponent>;
+describe('DropdownPageComponent', () => {
+  let component: DropdownPageComponent;
+  let fixture: ComponentFixture<DropdownPageComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SelectPageComponent ]
+      declarations: [ DropdownPageComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SelectPageComponent);
+    fixture = TestBed.createComponent(DropdownPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
